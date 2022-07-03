@@ -1,0 +1,12 @@
+{
+	"name": "@rshig/browser-apis-types",
+	"version": "0.0.1",
+	"main": "",
+	"types": "index.d.ts",
+	"dependencies": {
+		"tsconfig": "workspace:*"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}

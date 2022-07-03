@@ -1,0 +1,42 @@
+{
+	"name": "permissions",
+	"version": "0.0.0",
+	"private": true,
+	"workspaces": [
+		"apps/*",
+		"packages/*"
+	],
+	"scripts": {
+		"build": "turbo run build",
+		"dev": "turbo run dev --parallel",
+		"lint": "turbo run lint",
+		"format": "prettier --write \"**/*.{ts,tsx,md}\" --ignore-path .gitignore",
+		"b": "pnpm --filter @rshig/browser-apis",
+		"u": "pnpm --filter @rshig/use-browser-apis",
+		"w": "pnpm --filter web",
+		"packages": "pnpm --filter '@rshig/*'",
+		"prepare": "husky install",
+		"changeset": "changeset",
+		"version-packages": "changeset version",
+		"release": "changeset publish"
+	},
+	"devDependencies": {
+		"@changesets/cli": "^2.23.0",
+		"@types/node": "^18.0.1",
+		"@types/react": "18.0.14",
+		"eslint": "^8.19.0",
+		"eslint-config-custom": "workspace:*",
+		"prettier": "^2.7.1",
+		"turbo": "latest",
+		"typescript": "^4.7.4"
+	},
+	"engines": {
+		"npm": ">=7.0.0",
+		"node": ">=16.0.0"
+	},
+	"packageManager": "pnpm@7.5.0",
+	"lint-staged": {
+		"*.{ts,tsx}": "eslint --cache --fix",
+		"*.{ts,tsx,md}": "prettier --write"
+	}
+}
